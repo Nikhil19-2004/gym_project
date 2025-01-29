@@ -1,0 +1,332 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs</title>
+    <script src="https://kit.fontawesome.com/ccdbd762c2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url({% static 'images/bg.jpg' %});
+            font-family: 'Arial', sans-serif; /* Use a web-safe font for better compatibility */
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+    
+        .container p {
+            font-size: 3rem; /* Adjust font size for better visibility across devices */
+            margin: 15vh 0 0 10vw; /* Reduce margin for better spacing on smaller devices */
+            font-weight: bold;
+        }
+    
+        #hope {
+            font-size: 3rem;
+            margin: 15vh 0 0 20vw;
+            color: rgb(254, 18, 5);
+            font-weight: 900;
+        }
+    
+        .program1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+    
+        .program p {
+            font-size: 2.5rem;
+            text-align: center;
+            font-weight: bolder;
+            margin: 10px 0;
+            text-decoration: underline;
+        }
+    
+        #img, #imgs {
+            width: 80px; /* Adjust image size for smaller screens */
+            height: 80px;
+            border-radius: 5px;
+        }
+    
+        #cont, #content {
+            margin-left: 10px;
+            font-size: 1.2rem;
+            font-weight: bolder;
+        }
+    
+        #top, #topper {
+            font-size: 1rem;
+            text-align: justify;
+            margin: 0 0 10px 0;
+        }
+    
+        .row2 {
+            background-color: rgba(85, 85, 85, 0.8);
+            border: 1px solid #6e6e6e;
+            font-weight: bolder;
+            border-radius: 15px;
+            margin: 15px;
+            padding: 15px;
+            color: #fff;
+        }
+    
+        .sl {
+            position: relative;
+            max-width: 1260px;
+            margin: auto;
+            overflow: hidden;
+            height: auto;
+            border-radius: 15px;
+        }
+    
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+    
+        .slid {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+    
+        .slid h1 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            font-size: 2rem; /* Reduced font size for better readability on smaller screens */
+        }
+    
+        .slid video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+    
+        button.prev, button.next {
+            position: absolute;
+            top: 50%;
+            width: 35px; /* Adjust button size for better accessibility */
+            height: 35px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+    
+        button.prev {
+            left: 10px;
+        }
+    
+        button.next {
+            right: 10px;
+        }
+    
+        button.prev:hover, button.next:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+        }
+    
+        @media (max-width: 768px) {
+            .container p, #hope {
+                font-size: 2rem; /* Smaller font size for mobile */
+                margin: 10vh 0 0 5vw;
+            }
+    
+            .program p {
+                font-size: 1.8rem;
+            }
+    
+            .row2 {
+                margin: 10px;
+                padding: 10px;
+            }
+    
+            #cont, #content {
+                font-size: 1rem; /* Adjusted text size for readability */
+            }
+    
+            #top, #topper {
+                font-size: 0.9rem;
+            }
+    
+            .slid h1 {
+                font-size: 1.2rem;
+                bottom: 5px;
+            }
+    
+            button.prev, button.next {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .container p, #hope {
+                font-size: 1.8rem;
+            }
+    
+            .program p {
+                font-size: 1.5rem;
+            }
+    
+            #cont, #content {
+                font-size: 0.9rem;
+            }
+    
+            #img, #imgs {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>    
+</head>
+<body>
+    <div class="sl">
+        <div class="slides">
+            <div class="slid">
+                <a href="/photo"><video src="{% static 'images/vid1.mp4' %}" alt="video 1" autoplay muted loop></video>
+                <h1>Basic Fitness</h1></a>
+            </div>
+            <div class="slid">
+                <a href="/photo"><video src="{% static 'images/vid2.mp4' %}" alt="video 2" autoplay muted loop></video>
+                <h1>Muscle Training</h1></a>
+            </div>
+            <div class="slid">
+                <a href="/photo"><video src="{% static 'images/vid3.mp4' %}" alt="video 3" autoplay muted loop></video>
+                <h1>Yoga Training</h1></a>
+            </div>
+            <div class="slid">
+                <a href="/photo"><video src="{% static 'images/vid4.mp4' %}" alt="video 4" autoplay muted loop></video>
+                <h1>Body Building</h1></a>
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+    <script>
+        // JavaScript for slider functionality
+
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slid').length;
+        let index = 0;
+
+        // Function to update the slide position
+        function updateSlidePosition() {
+            const offset = -index * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+            manageVideoPlayback();
+        }
+
+        // Function to move to the next slide
+        function moveToNextSlide() {
+            index = (index + 1) % slideCount;
+            updateSlidePosition();
+        }
+
+        // Function to move to the previous slide
+        function moveToPrevSlide() {
+            index = (index - 1 + slideCount) % slideCount;
+            updateSlidePosition();
+        }
+
+        // Function to manage video playback
+        function manageVideoPlayback() {
+            const slidesArray = document.querySelectorAll('.slid');
+            slidesArray.forEach((slide, i) => {
+                const video = slide.querySelector('video');
+                if (video) {
+                    if (i === index) {
+                        video.play();
+                    } else {
+                        video.pause();
+                        video.currentTime = 0; // Reset video to the beginning
+                    }
+                }
+            });
+        }
+
+        // Add event listeners to the navigation buttons
+        document.querySelector('.prev').addEventListener('click', moveToPrevSlide);
+        document.querySelector('.next').addEventListener('click', moveToNextSlide);
+
+        // Initial call to set the slide position
+        updateSlidePosition();
+    </script>
+    <section class="row2">
+        <div class="program">
+            <p>Program</p>
+        </div>
+    </section>
+    <div class="container2">
+        <section class="row2">
+            <table>
+                <tr>
+                    <td><img src="{% static 'images/dumble1.jpg' %}" id="img"></td>
+                    <td>
+                        <p id="cont">Basic Fitness</p>
+                        <p id="top">Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles. There are seven basic movements the human body can perform and all other exercises are merely variations of these seven: Pull, Push, Squat, Lunge, Hinge, Rotation, and Gait. When performing all of these movements, you will be able to stimulate all of the major muscle groups in your body.</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section class="row2">
+            <table>
+                <tr>
+                    <td>
+                        <p id="content">Muscle Training</p>
+                        <p id="topper">Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles. There are seven basic movements the human body can perform and all other exercises are merely variations of these seven: Pull, Push, Squat, Lunge, Hinge, Rotation, and Gait. When performing all of these movements, you will be able to stimulate all of the major muscle groups in your body.</p>
+                    </td>
+                    <td><img src="{% static 'images/dumble1.jpg' %}" id="imgs"></td>
+                </tr>
+            </table>
+        </section>
+        <section class="row2">
+            <table>
+                <tr>
+                    <td><img src="{% static 'images/dumble1.jpg' %}" id="img"></td>
+                    <td>
+                        <p id="cont">Yoga Training</p>
+                        <p id="top">Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles. There are seven basic movements the human body can perform and all other exercises are merely variations of these seven: Pull, Push, Squat, Lunge, Hinge, Rotation, and Gait. When performing all of these movements, you will be able to stimulate all of the major muscle groups in your body.</p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section class="row2">
+            <table>
+                <tr>
+                    <td>
+                        <p id="content">Body Building</p>
+                        <p id="topper">Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles. There are seven basic movements the human body can perform and all other exercises are merely variations of these seven: Pull, Push, Squat, Lunge, Hinge, Rotation, and Gait. When performing all of these movements, you will be able to stimulate all of the major muscle groups in your body.</p>
+                    </td>
+                    <td><img src="{% static 'images/dumble1.jpg' %}" id="imgs"></td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

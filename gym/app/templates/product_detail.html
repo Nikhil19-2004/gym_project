@@ -1,0 +1,394 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width:95%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            margin-top:2%;
+            margin-left:-60%;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            padding: 20px;
+            margin-left:60%;
+            margin-top:-35%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .product-details h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .product-details p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .product-details .price {
+            font-size: 1.5em;
+            color: #b12704;
+        }
+        .product-details del {
+            color: #888;
+            margin-top: 8px;
+            font-size: 1.1rem;
+        }
+        .product-details .description {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .product-info .description {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .kg {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .kg select {
+            font-size: 18px;
+            border-radius: 8px;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        .star-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left:5px;
+            margin-top: 5px;
+        }
+
+        .star-rating input {
+            display: none; 
+        }
+
+        .star-rating label {
+            font-size: 1.5em;
+            color: #FFD700;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #FFD700; 
+        }
+
+        .small-img-row {
+            display: flex;
+            gap: 10px;
+            width:30%;
+            margin-top: 20px;
+        }
+
+        .small-img-col {
+            flex: 1;
+        }
+
+        .small-img {
+            width: 90%;
+            height: 80px; /* Adjust this height as needed */
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .small-img:hover {
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            margin-top: 20px;
+
+        }
+
+        .btn-primary {
+            background-color: #FF2400;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc0000;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .slider {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .slide {
+            width: 24%;
+            background-color: #fff;
+            border-radius: 15px;
+            padding-bottom:20px;
+            margin-bottom:20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 15px;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .slide:hover {
+            transform: scale(1.02);
+        }
+
+        .product-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align:left;
+        }
+
+        .product-info h2 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .product-info p {
+            margin: 0;
+            color: #8B0000;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .product-info .price {
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .product-info del {
+            color: #888;
+            margin-top: 8px;
+            font-size: 1.1rem;
+        }
+
+        .off {
+            color: #008000;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .setoff {
+            color: #008000;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .btn-pr{
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: -5px;
+            font-weight: bold;
+            margin-right: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-pr:hover {
+            background-color: #0056b3;
+        }
+        .btn {
+            background-color: #FF2400;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+        @media (max-width: 768px) {
+            .product-image img {
+                max-width: 80%;
+            }
+
+            .product-details {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            .small-img-row {
+                flex-direction: column;
+            }
+
+            .small-img-col {
+                margin-bottom: 10px;
+            }
+
+            .slider {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .slide {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" id="ProductImg">
+        </div>
+        <div class="product-details">
+            <h1>{{ product.name }}</h1>
+            <del>₹{{ product.dell }}</del><a class='setoff'>{{ product.percentage }}</a>
+            <p class="price">₹{{ product.price }}</p>
+            <p class="description">{{ product.description }}</p>
+            <div class="star-rating">
+                <input type="radio" id="star1" name="rating" value="5">
+                <label for="star1" title="5 stars">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="4">
+                <label for="star2" title="4 stars">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 stars">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="2">
+                <label for="star4" title="2 stars">&#9733;</label>
+                <input type="radio" id="star5" name="rating" value="1">
+                <label for="star5" title="1 star">&#9733;</label>
+            </div>
+            <div class="button-container">
+                <a class="btn-primary" href="{% url 'add_cart' product.id %}">Buy Now</a>
+            </div>
+            <a href="{% url 'product' %}" class="back-link">Back to Product List</a>
+        </div>
+        <div class="small-img-row">
+            <div class="small-img-col">
+                <img src="{{ product.image.url }}" alt="Product Image 1" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ product.image1.url }}" alt="Product Image 2" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ product.image2.url }}" alt="Product Image 3" class="small-img">
+            </div>
+            <div class="small-img-col">
+                <img src="{{ product.image3.url }}" alt="Product Image 4" class="small-img">
+            </div>
+        </div>
+        <script>
+            document.querySelectorAll('.small-img').forEach(img => {
+                img.addEventListener('click', function() {
+                    document.getElementById('ProductImg').src = this.src;
+                });
+            });
+        </script>
+    </div>
+        <div class="container">
+        <div class="slider">
+            {% for product in category.products.all %}
+            <div class="slide">
+                <div class='product-img'>
+                   {% if product.image %}
+                     <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                   {% else %}
+                     <img src="{% static 'default_image.png' %}" alt="No Image Available">
+                   {% endif %}
+                </div>
+                <div class="product-info">
+                    <h2>{{ product.name }}</h2>
+                    <p class="description">{{ product.description }}</p>
+                    <del>₹{{ product.dell }}</del><a class='off'>{{ product.percentage }}</a>
+                    <p class="price">₹{{ product.price }}</p>
+                    <div class="star-rating">
+                        <input type="radio" id="star1-{{ forloop.counter }}" name="rating-{{ forloop.counter }}" value="5">
+                        <label for="star1-{{ forloop.counter }}" title="5 stars">&#9733;</label>
+                        <input type="radio" id="star2-{{ forloop.counter }}" name="rating-{{ forloop.counter }}" value="4">
+                        <label for="star2-{{ forloop.counter }}" title="4 stars">&#9733;</label>
+                        <input type="radio" id="star3-{{ forloop.counter }}" name="rating-{{ forloop.counter }}" value="3">
+                        <label for="star3-{{ forloop.counter }}" title="3 stars">&#9733;</label>
+                        <input type="radio" id="star4-{{ forloop.counter }}" name="rating-{{ forloop.counter }}" value="2">
+                        <label for="star4-{{ forloop.counter }}" title="2 stars">&#9733;</label>
+                        <input type="radio" id="star5-{{ forloop.counter }}" name="rating-{{ forloop.counter }}" value="1">
+                        <label for="star5-{{ forloop.counter }}" title="1 star">&#9733;</label>
+                    </div>
+                <div class="button-container">
+                    <a class="btn-pr" href="{% url 'add_to_cart' product.id %}">Add To Cart</a>
+                    <a class="btn" href="{% url 'product_detail' product.id %}">Buy Now</a>
+                </div>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

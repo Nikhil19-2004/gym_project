@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ccdbd762c2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url('{% static "images/body2.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.1) 0px 1px 3px;
+            padding: 40px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #555;
+            background: none;
+            color: #fff;
+        }
+
+        .input-group input:focus {
+            border-color: #0173ed;
+            outline: none;
+        }
+
+        .button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 6px;
+            border: none;
+            background-color: #7d2ae8;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #5b1dbf;
+        }
+
+        .bottom-text {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .bottom-text a {
+            color: #7d2ae8;
+            text-decoration: none;
+        }
+
+        .bottom-text a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 30px;
+            }
+            .heading {
+                font-size: 28px;
+            }
+            .button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" action="" method="post">{% csrf_token %}
+            <p class="heading">Sign Up</p>
+            <div class="input-group">
+                <input required placeholder="Username" id="uname" name="uname" type="text" />
+            </div>
+            <div class="input-group">
+                <input required placeholder="Password" name="psw" id="psw" type="password" />
+            </div>
+            <div class="input-group">
+                <input required placeholder="Confirm Password" name="repsw" id="repsw" type="password" />
+            </div>
+            <button class="button" type="submit">Signup</button>
+            <div class="bottom-text">
+                <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

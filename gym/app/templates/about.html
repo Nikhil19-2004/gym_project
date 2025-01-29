@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <script src="https://kit.fontawesome.com/ccdbd762c2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #D3D3D3;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: #FFFFF0;
+            margin: 0;
+            padding: 35px 20px; 
+        }
+
+        .container p {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .container5 {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #F0F0F0;
+            border-bottom: 5px solid #333;
+        }
+
+        .container5 p {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 0;
+            color: #333;
+        }
+
+        .container2 {
+            padding: 20px;
+            background-color: #F8F8F8;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .row {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 700px;
+            width: 100%;
+            display: flex;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .row img {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .row .down {
+            padding: 20px;
+            width: 50%;
+        }
+
+        .row h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #222;
+            font-weight: 600;
+        }
+
+        .row p {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .row:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container p {
+                font-size: 2rem;
+            }
+
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .row img {
+                width: 100%;
+                height: auto;
+            }
+
+            .row .down {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .container5 p {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>About Us</p>
+    </div>
+    <div class="container5">
+        <p>Our Experts</p>
+    </div>
+    <div class="container2">
+        <div class="row">
+            <img src="{% static 'images/gym8.jpg' %}" alt="Mr. Hardeep Singh">
+            <div class="down">
+                <h2>Mr. Hardeep Singh</h2>
+                <p>Fitness trainers and instructors lead, instruct, and motivate individuals or groups in exercise activities, including cardiovascular workouts (for the heart and blood circulation), strength training, and stretching. They work with people of all ages and skill levels.</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="{% static 'images/gym expert.jpg' %}" alt="Ms. Eisha">
+            <div class="down">
+                <h2>Ms. Eisha</h2>
+                <p>Fitness trainers and instructors lead, instruct, and motivate individuals or groups in exercise activities, including cardiovascular workouts (for the heart and blood circulation), strength training, and stretching. They work with people of all ages and skill levels.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="row">
+            <img src="{% static 'images/gym expert2.jpeg' %}" alt="Mr. Sehaj Singh">
+            <div class="down">
+                <h2>Mr. Sehaj Singh</h2>
+                <p>Fitness trainers and instructors lead, instruct, and motivate individuals or groups in exercise activities, including cardiovascular workouts (for the heart and blood circulation), strength training, and stretching. They work with people of all ages and skill levels.</p>
+            </div>
+        </div>
+        <div class="row">
+            <img src="{% static 'images/gym expert 4.jpg' %}" alt="Mr. Sourab">
+            <div class="down">
+                <h2>Mr. Sourab</h2>
+                <p>Fitness trainers and instructors lead, instruct, and motivate individuals or groups in exercise activities, including cardiovascular workouts (for the heart and blood circulation), strength training, and stretching. They work with people of all ages and skill levels.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

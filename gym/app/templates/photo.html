@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Training</title>
+    <script src="https://kit.fontawesome.com/ccdbd762c2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #F4F4F9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container Styling */
+        .container6 {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container6 h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .slid video {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 10px 0;
+            text-align: justify;
+            color: #555;
+        }
+
+        .content li {
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        #heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .container6 {
+                padding: 10px;
+            }
+
+            .container6 h1 {
+                font-size: 2rem;
+            }
+
+            .slid video {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container6">
+        <h1>Basic Fitness</h1>
+        <div class="slid">
+            <video src="{% static 'images/basic.mp4' %}" alt="Basic Fitness Video" controls></video>
+        </div>
+        <div class="content">
+            <p>Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles.
+                There are seven basic movements the human body can perform and all other exercises are merely variations of these seven: Pull, Push, Squat, Lunge, Hinge, Rotation, and Gait. When performing all of these movements, you will be able to stimulate all of the major muscle groups in your body.
+                Health-related fitness involves skills that enable one to become and stay physically healthy. Six Components of Skill-Related Fitness include agility, balance, coordination, speed, power, and reaction time.</p>
+            <div class="slid">
+                <video src="{% static 'images/basic2.mp4' %}" alt="Basic Fitness Video 2" controls></video>
+            </div>
+            <p id="heading">Steps</p>
+            <ul>
+                <li>Cardiovascular Endurance</li>
+                <li>Muscular Strength</li>
+                <li>Muscular Endurance</li>
+                <li>Flexibility</li>
+                <li>Body Composition</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container6">
+        <h1>Muscle Training</h1>
+        <div class="slid">
+            <video src="{% static 'images/muscle.mp4' %}" alt="Muscle Training Video" controls></video>
+        </div>
+        <div class="content">
+            <p>Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles.
+                There are seven basic movements the human body can perform and all other exercises are merely variations of these seven: Pull, Push, Squat, Lunge, Hinge, Rotation, and Gait. When performing all of these movements, you will be able to stimulate all of the major muscle groups in your body.
+                Health-related fitness involves skills that enable one to become and stay physically healthy. Six Components of Skill-Related Fitness include agility, balance, coordination, speed, power, and reaction time.
+                Strength training may enhance your quality of life and improve your ability to do everyday activities. Strength training can also protect your joints from injury. Building muscle can contribute to better balance and may reduce your risk of falls, helping you maintain independence as you age.</p>
+            <div class="slid">
+                <video src="{% static 'images/muscle2.mp4' %}" alt="Muscle Training Video 2" controls></video>
+            </div>
+            <p id="heading">Steps</p>
+            <ul>
+                <li>Warm Up</li>
+                <li>Start with Lighter Weight</li>
+                <li>Rest for at least 60 seconds between sets</li>
+                <li>Limit your workout to no longer than 45 minutes</li>
+                <li>Gently stretch your muscles after your workout</li>
+                <li>Rest a day or two between workouts</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container6">
+        <h1>Yoga Training</h1>
+        <div class="slid">
+            <video src="{% static 'images/yoga.mp4' %}" alt="Yoga Training Video" controls></video>
+        </div>
+        <div class="content">
+            <p>Yoga is a great choice for improving heart health as it is a process of healing from the inside. On the other hand, gym training also works on heart health by burning excess calories, but heavy gym training is not recommended for heart patients. Yoga works brilliantly on mental health.
+                Yoga is best done after a workout or on your rest days. This is because yoga stretches out your muscle fibers and reduces their ability to contract. Contraction is actually what builds muscle, so the weakened body tissues from doing yoga before a workout ultimately reduce your weight training performance.</p>
+            <div class="slid">
+                <video src="{% static 'images/yyoga.mp4' %}" alt="Yoga Training Video 2" controls></video>
+            </div>
+            <p id="heading">Steps</p>
+            <ul>
+                <li>Yama (Abstinences)</li>
+                <li>Niyama (Observances)</li>
+                <li>Asana (Yoga Postures)</li>
+                <li>Pranayama (Breath Control)</li>
+                <li>Pratyahara (Withdrawal of the Senses)</li>
+                <li>Dharana (Concentration)</li>
+                <li>Dhyana (Meditation)</li>
+                <li>Samadhi (Absorption)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container6">
+        <h1>Body Building</h1>
+        <div class="slid">
+            <video src="{% static 'images/body.mp4' %}" alt="Body Building Video" controls></video>
+        </div>
+        <div class="content">
+            <p>Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles.
+                There are seven basic movements the human body can perform and all other exercises are merely variations of these seven: Pull, Push, Squat, Lunge, Hinge, Rotation, and Gait. When performing all of these movements, you will be able to stimulate all of the major muscle groups in your body.
+                Health-related fitness involves skills that enable one to become and stay physically healthy. Six Components of Skill-Related Fitness include agility, balance, coordination, speed, power, and reaction time.
+                Strength training may enhance your quality of life and improve your ability to do everyday activities. Strength training can also protect your joints from injury. Building muscle can contribute to better balance and may reduce your risk of falls, helping you maintain independence as you age.</p>
+            <div class="slid">
+                <video src="{% static 'images/body2.mp4' %}" alt="Body Building Video 2" controls></video>
+            </div>
+            <p id="heading">Steps</p>
+            <ul>
+                <li>Warm Up</li>
+                <li>Start with Lighter Weight</li>
+                <li>Rest for at least 60 seconds between sets</li>
+                <li>Limit your workout to no longer than 45 minutes</li>
+                <li>Gently stretch your muscles after your workout</li>
+                <li>Rest a day or two between workouts</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

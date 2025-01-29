@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Member</title>
+    <script src="https://kit.fontawesome.com/ccdbd762c2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D3D3D3;
+            color: #333;
+        }
+
+        /* Full-height container for the header section */
+        .container {
+            position: relative;
+            text-align: center;
+            background-color: beige;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Styling the text overlay in the header */
+        .container p {
+            color: #FFFFF0;
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            z-index: 1;
+        }
+
+        /* Styling for the main content section */
+        section {
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+        }
+
+        /* Centered container for the form */
+        .contact-container {
+            max-width: 650px; /* Reduced for better fit */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Form container with improved styling */
+        .form-container {
+            background: #363953;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* Ensures the border radius is applied */
+        }
+
+        
+        .form-container h3 {
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+       
+        .contact-form label {
+            display: block;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        
+        .contact-form input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #333;
+            background: #fff;
+        }
+
+       
+        .contact-form input[type="submit"] {
+            background-color: #00dbde;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            padding: 12px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        
+        .contact-form input[type="submit"]:hover {
+            background-color: #39a0ed;
+        }
+
+        
+        .contact-form a {
+            color: #ffffff;
+            text-decoration: underline;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        
+        .contact-form a:hover {
+            color: #b3b3b3;
+        }
+
+        
+        @media (max-width: 768px) {
+            .container p {
+                font-size: 2.5rem;
+            }
+
+            .contact-container {
+                padding: 10px;
+            }
+
+            .form-container {
+                padding: 15px;
+            }
+
+            .contact-form input {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Become a Member</p>
+    </div>
+    <section>
+        <div class="contact-container">
+            <div class="form-container">
+                <h3>Welcome</h3>
+                <form action="" method="POST" class="contact-form">
+                    {% csrf_token %}
+                    <label for="uname">User Name</label>
+                    <input type="text" id="uname" name="uname" placeholder="Your Name" required>
+                    <label for="phone">Contact No.</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter Contact No." required>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                    <label for="psw">Password</label>
+                    <input type="password" id="psw" name="psw" placeholder="Enter Password" required>
+                    <label for="repsw">Re-Password</label>
+                    <input type="password" id="repsw" name="repsw" placeholder="Re-enter Password" required>
+                    <input type="submit" value="Submit">
+                    <a href="/">You already have an account</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

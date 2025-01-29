@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/ccdbd762c2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{% static "images/gym14.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 15px;
+            padding: 40px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .heading {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .paragraph {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            background: none;
+            border: 1px solid #353535;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            color: #fff;
+            width: 100%;
+            box-shadow: inset 0px 0px 5px rgba(255,255,255,0.2);
+        }
+
+        .input-group input:focus {
+            border-color: #0173ed;
+            outline: none;
+        }
+
+        .button {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            background-color: #7d2ae8;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .button:active {
+            transform: scale(0.96);
+        }
+
+        .bottom-text {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .bottom-text a {
+            color: #7d2ae8;
+            text-decoration: none;
+        }
+
+        .bottom-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+                padding: 30px;
+            }
+            
+            .heading {
+                font-size: 28px;
+            }
+            
+            .paragraph {
+                font-size: 14px;
+            }
+            
+            .button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <form class="login-form" action="" method="POST">
+            {% csrf_token %}
+            <p class="heading">Login</p>
+            <p class="paragraph">Login to your account</p>
+            <div class="input-group">
+                <input required="" placeholder="Username" id="username" name="username" type="text"/>
+            </div>
+            <div class="input-group">
+                <input required="" placeholder="Password" name="password" id="password" type="password"/>
+            </div>
+            <button class="button" type="submit">Login</button>
+            <div class="bottom-text">
+                <p><a href="/logout"><i class="fas fa-sign-out-alt"></i> LOG OUT</a></p>
+                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ccdbd762c2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 40px 20px;
+            border-radius: 30px 30px 0 0;
+            color: #ffffff;
+        }
+
+        .container1 {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .row5 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .footer-col, .footer-col-1 {
+            flex: 1 1 200px; /* Flexible layout for columns */
+            padding: 0 15px;
+            text-align: left;
+        }
+
+        .footer-col h4, .footer-col-1 h4 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::before, .footer-col-1 h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: #e91e63;
+            height: 2px;
+            width: 50px;
+        }
+
+        .footer-col ul, .footer-col-1 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li, .footer-col-1 ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a, .footer-col-1 ul li a {
+            font-size: 1rem;
+            color: #bbbbbb;
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li a i {
+            margin-right: 10px;
+        }
+
+        ul li a:hover {
+            color: #ffffff;
+            background-color: #575757;
+            padding: 5px;
+            border-radius: 7px;
+        }
+
+        .footer-col img {
+            max-width: 90px;
+            height: auto;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: background-color 0.5s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+            transform: translateY(-5px);
+        }
+
+        .social-links .facebook {
+            background-color: #3b5998;
+        }
+
+        .social-links .twitter {
+            background-color: #1da1f2;
+        }
+
+        .social-links .instagram {
+            background-color: #e4405f;
+        }
+
+        @media (max-width: 768px) {
+            .container1 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-col, .footer-col-1 {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="container1">
+            <div class="row5">
+                <div class="footer-col">
+                    <div class="left">
+                        <img src="{% static 'images/fit-hit.png' %}" width="90px" alt="Logo"style="margin-bottom:10px;margin-left:-10px;">
+                    </div>
+                    <ul>
+                        <li><a href="/index"><i class="fa fa-home"></i> HOME</a></li>
+                        <li><a href="/classes"><i class="fas fa-save"></i> CLASSES</a></li>
+                        <li><a href="/contact"><i class="fa fa-phone"></i> CONTACT</a></li>
+                        <li><a href="/product"><i class="fas fa-cart-arrow-down"></i> PRODUCTS</a></li>
+                        <li><a href="/about"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-1">
+                    <h4>CLASSES</h4>
+                    <ul>
+                        <li><a href="/photo">Basic Fitness</a></li>
+                        <li><a href="/photo">Muscle Training</a></li>
+                        <li><a href="/photo">Yoga Training</a></li>
+                        <li><a href="/photo">Body Building</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a><i class="fa fa-phone" aria-hidden="true"></i><p>94780 20036</p></a></li>
+                        <li><a href="mailto:ranoutnikhil987@gamil.com"><i class="fa fa-envelope" aria-hidden="true"></i><p>nikhil@gamil.com</p></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a class="facebook" href="https://www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a class="instagram" href="https://www.instagram.com/__.nikhil_04/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a class="twitter" href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
