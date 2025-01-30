@@ -208,7 +208,7 @@ def pay_now(request):
 
 
 import logging
-stripe.api_key = "sk_test_51PiV2tSHhsNN23Z1uaemlRWp0JTkiuLQk42Jib5ZT858F2UEPKGdoSnSi69XiBTL0TzTuZb3j44vCrQc647smSn000I8nEflJn"
+stripe.api_key = "pk_test_51PiV2tSHhsNN23Z12F6x8VxDpzSLmloIXAE5WC5va9eaaXijProKNxp8vpQRKwG2wr0WdIUdGoe9xB1SHYQnAum500r9UyEhtc"
 
 
 def create_checkout_session(request):
